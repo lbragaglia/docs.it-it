@@ -1,6 +1,6 @@
 ---
 title: Cos'è F#
-description: Informazioni sul linguaggio di F# programmazione e sulla F# programmazione di questo tipo. Informazioni sui tipi di dati avanzati, sulle funzioni e sul modo in cui si integrano.
+description: Informazioni sul linguaggio di programmazione F# e sulla programmazione di questo tipo. Informazioni sui tipi di dati avanzati, sulle funzioni e sul modo in cui si integrano.
 ms.date: 08/03/2018
 ms.openlocfilehash: 3cba509f59a8e81e1a0264de7451e9d80304d768
 ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
@@ -9,11 +9,11 @@ ms.contentlocale: it-IT
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71332727"
 ---
-# <a name="what-is-f"></a>Che cos'è F @ no__t-0
+# <a name="what-is-f"></a>Che cos'è F#
 
-F#è un linguaggio di programmazione funzionale che semplifica la scrittura di codice corretto e gestibile.
+F# è un linguaggio di programmazione funzionale che semplifica la scrittura di codice corretto e mantenibile.
 
-F#la programmazione comporta principalmente la definizione di tipi e funzioni che vengono dedotti e generalizzati automaticamente. Ciò consente di rimanere concentrati sul dominio del problema e di manipolarne i dati, anziché i dettagli della programmazione.
+La programmazione in F# comporta principalmente la definizione di tipi e funzioni che vengono automaticamente inferiti e generalizzati. Ciò consente di rimanere concentrati sul dominio del problema e sulla manipolazione dei dati, anziché sui dettagli della programmazione.
 
 ```fsharp
 open System // Gets access to functionality in System namespace.
@@ -35,21 +35,21 @@ let main args =
     0
 ```
 
-F#dispone di numerose funzionalità, tra cui:
+F# dispone di numerose funzionalità, tra cui:
 
 * Sintassi leggera
-* Non modificabile per impostazione predefinita
-* Inferenza del tipo e generalizzazione automatica
+* Immutabile per impostazione predefinita
+* Inferenza dei tipi e generalizzazione automatica
 * Funzioni di prima classe
 * Tipi di dati avanzati
-* Criteri di ricerca
+* Pattern matching
 * Programmazione asincrona
 
-Un set completo di funzionalità è documentato nelle informazioni di [ F# riferimento sul linguaggio](./language-reference/index.md).
+L'insieme completo delle funzionalità è documentato nella [Guida di riferimento del linguaggio F#](./language-reference/index.md).
 
 ## <a name="rich-data-types"></a>Tipi di dati avanzati
 
-I tipi di dati, ad esempio i [record](./language-reference/records.md) e le [unioni discriminate](./language-reference/discriminated-unions.md) , consentono di rappresentare dati complessi e domini.
+I tipi di dati, ad esempio i [record](./language-reference/records.md) e le [unioni discriminate](./language-reference/discriminated-unions.md), consentono di rappresentare dati e domini complessi.
 
 ```fsharp
 // Group data with Records
@@ -72,11 +72,11 @@ type WithdrawalResult =
     | UndisclosedFailure
 ```
 
-F#i record e le unioni discriminate sono non null, non modificabili e confrontabili per impostazione predefinita, rendendoli molto facili da utilizzare.
+I record F# e le unioni discriminate sono non-null, immutabili e confrontabili per impostazione predefinita, rendendoli molto facili da utilizzare.
 
-## <a name="enforced-correctness-with-functions-and-pattern-matching"></a>Applicare la correttezza alle funzioni e ai criteri di ricerca
+## <a name="enforced-correctness-with-functions-and-pattern-matching"></a>Ottenere la correttezza tramite le funzioni e il pattern matching
 
-F#le funzioni sono facili da dichiarare e potenti in pratica. In [combinazione con i criteri di](./language-reference/pattern-matching.md)ricerca, consentono di definire il comportamento la cui correttezza viene applicata dal compilatore.
+Le funzioni F# sono facili da dichiarare e potenti nella pratica. In combinazione col [pattern matching](./language-reference/pattern-matching.md), consentono di definire un comportamento la cui correttezza viene verificata dal compilatore.
 
 ```fsharp
 // Returns a WithdrawalResult
@@ -93,11 +93,11 @@ let handleWithdrawal amount =
     | UndisclosedFailure -> printfn "Failed: unknown :("
 ```
 
-F#anche le funzioni sono di prima classe, ovvero possono essere passate come parametri e restituite da altre funzioni.
+Anche le funzioni F# sono di prima classe, ovvero possono essere passate come parametri e restituite da altre funzioni.
 
-## <a name="functions-to-define-operations-on-objects"></a>Funzioni per la definizione di operazioni sugli oggetti
+## <a name="functions-to-define-operations-on-objects"></a>Funzioni per definire operazioni sugli oggetti
 
-F#dispone del supporto completo per gli oggetti, che sono tipi di dati utili quando è necessario combinare dati e funzionalità. F#le funzioni vengono usate per modificare gli oggetti.
+F# dispone del supporto completo per gli oggetti, che sono tipi di dati utili quando è necessario combinare dati e funzionalità. Le funzioni F# vengono usate per manipolare gli oggetti.
 
 ```fsharp
 type Set<'T when 'T: comparison>(elements: seq<'T>) =
@@ -118,8 +118,8 @@ module Set =
     let add value (set: Set<'T>) = set.Add(value)
 ```
 
-Anziché scrivere codice orientato a oggetti, in F#, spesso si scrive codice che considera gli oggetti come un altro tipo di dati per le funzioni da modificare. Le funzionalità come le [interfacce generiche](./language-reference/interfaces.md), le [espressioni di oggetti](./language-reference/object-expressions.md)e l'utilizzo oculato dei [membri](./language-reference/members/index.md) sono comuni nei programmi più grandi F# .
+Anziché scrivere codice orientato a oggetti, in F# spesso si scrive codice che considera gli oggetti semplicemente come un altro tipo di dato manipolabile dalle funzioni. Funzionalità come le [interfacce generiche](./language-reference/interfaces.md), le [espressioni di oggetti](./language-reference/object-expressions.md) e l'utilizzo oculato dei [membri](./language-reference/members/index.md) sono comuni nei programmi F# più grandi.
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Per altre informazioni su un set di F# funzionalità più ampio, vedere la [ F# presentazione](tour.md).
+Per informazioni su un insieme più ampio di funzionalità, vedere la [presentazione di F#](tour.md).
