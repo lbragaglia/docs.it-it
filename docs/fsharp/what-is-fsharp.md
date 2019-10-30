@@ -72,11 +72,11 @@ type WithdrawalResult =
     | UndisclosedFailure
 ```
 
-I record F# e le unioni discriminate sono non-null, immutabili e confrontabili per impostazione predefinita, rendendoli molto facili da utilizzare.
+I record F# e le unioni discriminate sono non null, non modificabili e confrontabili per impostazione predefinita, rendendoli molto facili da utilizzare.
 
 ## <a name="enforced-correctness-with-functions-and-pattern-matching"></a>Ottenere la correttezza tramite le funzioni e il pattern matching
 
-Le funzioni F# sono facili da dichiarare e potenti nella pratica. In combinazione col [pattern matching](./language-reference/pattern-matching.md), consentono di definire un comportamento la cui correttezza viene verificata dal compilatore.
+Le funzioni F# sono facili da dichiarare e potenti nella pratica. In combinazione con i [criteri di ricerca](./language-reference/pattern-matching.md), consentono di definire un comportamento la cui correttezza viene verificata dal compilatore.
 
 ```fsharp
 // Returns a WithdrawalResult
@@ -97,7 +97,7 @@ Anche le funzioni F# sono di prima classe, ovvero possono essere passate come pa
 
 ## <a name="functions-to-define-operations-on-objects"></a>Funzioni per definire operazioni sugli oggetti
 
-F# dispone del supporto completo per gli oggetti, che sono tipi di dati utili quando è necessario combinare dati e funzionalità. Le funzioni F# vengono usate per manipolare gli oggetti.
+F# dispone del supporto completo per gli oggetti, che sono tipi di dati utili quando è necessario combinare dati e funzionalità. Le funzioni F# vengono usate per modificare gli oggetti.
 
 ```fsharp
 type Set<'T when 'T: comparison>(elements: seq<'T>) =
@@ -118,8 +118,8 @@ module Set =
     let add value (set: Set<'T>) = set.Add(value)
 ```
 
-Anziché scrivere codice orientato a oggetti, in F# spesso si scrive codice che considera gli oggetti semplicemente come un altro tipo di dato manipolabile dalle funzioni. Funzionalità come le [interfacce generiche](./language-reference/interfaces.md), le [espressioni di oggetti](./language-reference/object-expressions.md) e l'utilizzo oculato dei [membri](./language-reference/members/index.md) sono comuni nei programmi F# più grandi.
+Anziché scrivere codice orientato a oggetti, in F# spesso si scrive codice che considera gli oggetti semplicemente come un altro tipo di dati modificabili dalle funzioni. Funzionalità come le [interfacce generiche](./language-reference/interfaces.md), le [espressioni di oggetti](./language-reference/object-expressions.md) e l'utilizzo oculato dei [membri](./language-reference/members/index.md) sono comuni nei programmi F# più grandi.
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Per informazioni su un insieme più ampio di funzionalità, vedere la [presentazione di F#](tour.md).
+Per informazioni su un insieme più ampio di funzionalità, vedere la [Panoramica di F#](tour.md).
